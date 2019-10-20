@@ -10,7 +10,9 @@
 		<h1>Primer ejemplo de MVC con Spring</h1>
 				
 		<a href="principal/peticionAlumnosFormulario"> Ir a Procesar Alumnos Formulario Pricipal</a>		
-		<br>
+		<br><br><br>
 		<a href="secundario/peticionAlumnosFormulario"> Ir a Procesar Alumnos Formulario Secundario</a>
+		<br><br><br>
+		<a href="alumno/formularioRegistroAlumnos"> Ir a Formulario Registro Alumnos</a>
 	</body>
 </html>
