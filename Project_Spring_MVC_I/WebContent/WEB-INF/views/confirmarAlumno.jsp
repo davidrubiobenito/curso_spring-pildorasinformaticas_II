@@ -9,8 +9,8 @@
 	</head>
 	<body>
 	
-		<p>El alumno con nombre: <strong>${elAlumno.nombre}</strong> y apellido
-			<strong>${elAlumno.apellidos}</strong></p>
+		<p>El alumno con nombre <strong>${elAlumno.nombre}</strong>, apellido <strong>${elAlumno.apellidos}</strong>, edad <strong>${elAlumno.edad}</strong> y email <strong>${elAlumno.email}</strong> se ha registrado con éxito.</p>
+
 			
 		<p>La asigantura escogida es: <strong>${elAlumno.optativas}</strong></p>
 		
