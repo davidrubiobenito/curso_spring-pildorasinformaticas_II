@@ -9,10 +9,14 @@
 	</head>
 	<body>
 	
-		<h2>El alumno con nombre: <strong>${elAlumno.nombre}</strong> y apellido
-			<strong>${elAlumno.apellidos}</strong></h2>
+		<p>El alumno con nombre: <strong>${elAlumno.nombre}</strong> y apellido
+			<strong>${elAlumno.apellidos}</strong></p>
 			
 		<p>La asigantura escogida es: <strong>${elAlumno.optativas}</strong></p>
+		
+		<p>La ciudad deonde iniciará los estudios el alumno: <strong>${elAlumno.ciudadEstudios}</strong></p>
+		
+		<p>Los idiomas escogidos por el alumno son: <strong>${elAlumno.idiomasAlumno}</strong></p>
 	
 	</body>
 </html>

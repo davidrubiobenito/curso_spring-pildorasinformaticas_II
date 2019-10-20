@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/alumno")
 public class AlumnoController{
 
-    @RequestMapping("/formularioRegistroAlumnos")
+    @RequestMapping("/registroAlumno")
     public String formularioRegistroAlumnos(Model modelo){
 
         final Alumno alumno = new Alumno();
         modelo.addAttribute("elAlumno", alumno);
 
-        return "formularioRegistroAlumnos";
+        return "registroAlumno";
     }
 
-    @RequestMapping("/procesarFormularioRegistroAlumnos")
+    @RequestMapping("/confirmarAlumno")
     public String procesarFormularioRegistroAlumnos(@ModelAttribute("elAlumno") Alumno elAlumno){
 
-        return "procesarFormularioRegistroAlumnos";
+        return "confirmarAlumno";
     }
 
 }
