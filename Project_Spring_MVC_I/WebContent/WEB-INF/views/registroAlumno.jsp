@@ -10,6 +10,7 @@
 	<body>
 		<form:form action="confirmarAlumno" modelAttribute="elAlumno">
 			Nombre: <form:input path="nombre"/>		
+			<form:errors path="nombre" style="color:red"></form:errors>
 				
 			<br/><br/><br/>			
 			
