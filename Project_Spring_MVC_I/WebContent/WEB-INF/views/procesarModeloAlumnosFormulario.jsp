@@ -4,12 +4,14 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Petición Formulario Alumnos</title>
+	<title>Respuesta Formulario Alumnos</title>
 	</head>
 	<body>
-		<form action="procesarModeloAlumnosFormulario" method="get">
-			<input type="text" name="nombreAlumno">
-			<input type="submit">		
-		</form>
+	
+		<h2>Hola ${param.nombreAlumno}. Bienvenido al curso de Spring.</h2> 
+		<p><br>
+		<h2>Atención a todos</h2>
+		${mensajeClaro}
+	
 	</body>
 </html>
