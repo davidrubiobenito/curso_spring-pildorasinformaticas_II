@@ -1,7 +1,12 @@
 package com.drbotro.spring.mvc;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Alumno{
 
+    @NotNull
+    @Size(min = 2, message = "Campo requerido")
     private String nombre;
     private String apellidos;
     private String optativas;

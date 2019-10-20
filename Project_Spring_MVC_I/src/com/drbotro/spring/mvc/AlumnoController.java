@@ -1,7 +1,10 @@
 package com.drbotro.spring.mvc;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,9 +22,18 @@ public class AlumnoController{
     }
 
     @RequestMapping("/confirmarAlumno")
-    public String procesarFormularioRegistroAlumnos(@ModelAttribute("elAlumno") Alumno elAlumno){
+    public String procesarFormularioRegistroAlumnos(@Valid @ModelAttribute("elAlumno") Alumno elAlumno,
+            BindingResult resultadovalidacion){
 
-        return "confirmarAlumno";
+        String sFormulario = "";
+
+        if(resultadovalidacion.hasErrors()){
+            sFormulario = "registroAlumno";
+        }else{
+            sFormulario = "confirmarAlumno";
+        }
+
+        return sFormulario;
     }
 
 }
