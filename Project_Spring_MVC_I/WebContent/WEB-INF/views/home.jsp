@@ -13,6 +13,6 @@
 		<br><br><br>
 		<a href="secundario/peticionAlumnosFormulario"> Ir a Procesar Alumnos Formulario Secundario</a>
 		<br><br><br>
-		<a href="alumno/formularioRegistroAlumnos"> Ir a Formulario Registro Alumnos</a>
+		<a href="alumno/registroAlumno"> Ir a Formulario Registro Alumnos</a>
 	</body>
 </html>

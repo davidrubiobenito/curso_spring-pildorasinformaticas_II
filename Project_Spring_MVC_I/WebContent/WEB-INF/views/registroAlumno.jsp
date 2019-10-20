@@ -8,11 +8,15 @@
 	<title>Forms MVC Tags. Formulario Registro Alumnos</title>
 	</head>
 	<body>
-		<form:form action="procesarFormularioRegistroAlumnos" modelAttribute="elAlumno">
-			Nombre: <form:input path="nombre"/>			
+		<form:form action="confirmarAlumno" modelAttribute="elAlumno">
+			Nombre: <form:input path="nombre"/>		
+				
 			<br/><br/><br/>			
-			Apellidos: <form:input path="apellidos"/>			
+			
+			Apellidos: <form:input path="apellidos"/>	
+					
 			<br/><br/><br/>
+			
 			Asignaturas optativas: <br/>
 			<form:select path="optativas" multiple="true">
 				<form:option value="Diseño" label="Diseño"></form:option>
@@ -20,7 +24,22 @@
 				<form:option value="Comercio" label="Comercio"></form:option>
 				<form:option value="Danza" label="Danza"></form:option>
 			</form:select>
+			
 			<br/><br/><br/>
+			
+			Barcelona: <form:radiobutton path="ciudadEstudios" value="Barcelona"/>
+			Madrid: <form:radiobutton path="ciudadEstudios" value="Madrid"/>
+			Valencia: <form:radiobutton path="ciudadEstudios" value="Madrid"/>
+			
+			<br/><br/><br/>
+						
+			Inglés <form:checkbox path="idiomasAlumno" value="Inglés"/>
+			Francés <form:checkbox path="idiomasAlumno" value="Francés"/>
+			Aleman <form:checkbox path="idiomasAlumno" value="Alemán"/>
+			Chino <form:checkbox path="idiomasAlumno" value="Chino"/>
+			
+			<br/><br/><br/>		
+			
 			<input type="submit" value="Enviar"/>			
 		</form:form>
 	</body>
