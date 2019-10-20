@@ -9,8 +9,10 @@
 	</head>
 	<body>
 	
-		<h2>El alumno con nombre: ${elAlumno.nombre} y apellido
-			${elAlumno.apellidos}</h2>
+		<h2>El alumno con nombre: <strong>${elAlumno.nombre}</strong> y apellido
+			<strong>${elAlumno.apellidos}</strong></h2>
+			
+		<p>La asigantura escogida es: <strong>${elAlumno.optativas}</strong></p>
 	
 	</body>
 </html>
