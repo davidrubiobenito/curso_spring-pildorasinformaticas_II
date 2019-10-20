@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Respuesta Formulario Alumnos</title>
 	</head>
 	<body>
-		<h1>Primer ejemplo de MVC con Spring</h1>
+	
+		<h2>Hola ${param.nombreAlumno}. Bienvenido al curso de Spring.</h2> 
+	
 	</body>
 </html>
