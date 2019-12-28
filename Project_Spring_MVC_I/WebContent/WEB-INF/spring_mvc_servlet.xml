@@ -24,5 +24,9 @@
 	</bean>
 	
 	<mvc:resources location="/asserts/" mapping="/asserts/**"></mvc:resources>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="resources/messages"></property>
+	</bean>
 
 </beans>
