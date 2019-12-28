@@ -4,8 +4,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import com.drbotro.spring.mvc.validacionespersonalizadas.CPostalMadrid;
 
 public class Alumno{
 
@@ -22,7 +23,8 @@ public class Alumno{
     private String optativas;
     private String ciudadEstudios;
     private String idiomasAlumno;
-    @Pattern(regexp = "[0-9]{5}", message = "Sólo 5 valores numéricos")
+    //@Pattern(regexp = "[0-9]{5}", message = "Sólo 5 valores numéricos")
+    @CPostalMadrid
     private String codigoPostal;
 
     public Alumno(){
