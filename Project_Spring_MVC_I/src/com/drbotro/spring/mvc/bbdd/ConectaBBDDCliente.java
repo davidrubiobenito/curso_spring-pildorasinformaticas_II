@@ -18,7 +18,7 @@ public class ConectaBBDDCliente{
         Session miSession = miFactory.openSession();
 
         try{
-            Clientes cliente1 = new Clientes("David", "Code", "28850");
+            Clientes cliente1 = new Clientes("David", "Delgado", "Gran vía");
 
             miSession.beginTransaction();
             miSession.save(cliente1);
