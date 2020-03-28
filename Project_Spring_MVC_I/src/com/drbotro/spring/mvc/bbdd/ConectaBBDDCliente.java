@@ -18,13 +18,21 @@ public class ConectaBBDDCliente{
         Session miSession = miFactory.openSession();
 
         try{
-            Clientes cliente1 = new Clientes("David", "Rubio", "Gran vía");
+            Clientes cliente1 = new Clientes("David", "Code", "28850");
 
             miSession.beginTransaction();
             miSession.save(cliente1);
             miSession.getTransaction().commit();
 
             log.info("Registro insertado correctamente");
+
+            // lectura de registro
+            miSession.beginTransaction();
+            log.info("Lectura con registro con id: " + cliente1.getId());
+            Clientes clienteInsertado = miSession.get(Clientes.class, cliente1.getId());
+            log.info("Registro : " + clienteInsertado);
+            miSession.getTransaction().commit();
+            log.info("Terminado");
 
         }catch(Exception e){
             log.error("No conecta", e);
