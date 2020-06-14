@@ -1,10 +1,12 @@
 package com.drbotro.spring.mvc.bbdd.hibernate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,9 @@ public class DetalleCliente{
 
     @Column(name = "COMENTARIOS")
     private String comentarios;
+
+    @OneToOne(mappedBy = "detalleCliente", cascade = CascadeType.ALL)
+    private Cliente cliente;
 
     public DetalleCliente(){
     }
@@ -66,9 +71,17 @@ public class DetalleCliente{
         this.comentarios = comentarios;
     }
 
+    public Cliente getCliente(){
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+
     @Override
     public String toString(){
-        return "User [id=" + id + ", web=" + web + ", telefono=" + telefono + ", comentarios=" + comentarios + "]";
+        return "[id=" + id + ", web=" + web + ", telefono=" + telefono + ", comentarios=" + comentarios + "]";
     }
 
 }
