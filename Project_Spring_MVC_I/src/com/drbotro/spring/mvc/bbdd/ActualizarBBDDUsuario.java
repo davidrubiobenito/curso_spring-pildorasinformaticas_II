@@ -6,14 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class ActualizarBBDDCliente{
+public class ActualizarBBDDUsuario{
 
-    private static Log log = LogFactory.getLog(ActualizarBBDDCliente.class);
+    private static Log log = LogFactory.getLog(ActualizarBBDDUsuario.class);
 
     public static void main(String[] args){
 
         SessionFactory miFactory = new Configuration().configure("/resources/hibernate.cfg.xml")
-                .addAnnotatedClass(Clientes.class).buildSessionFactory();
+                .addAnnotatedClass(Usuario.class).buildSessionFactory();
 
         Session miSession = miFactory.openSession();
 
@@ -25,14 +25,14 @@ public class ActualizarBBDDCliente{
             miSession.beginTransaction();
 
             // creamos cliente
-            Clientes miClienteMod = miSession.get(Clientes.class, clienteId);
+            Usuario miClienteMod = miSession.get(Usuario.class, clienteId);
             miClienteMod.setNombre("Pedro");
 
             log.info("Registro actualizado correctamente");
 
-            miSession.createQuery("UPDATE Clientes SET apellidos='jaja' WHERE apellidos LIKE 'pr%'").executeUpdate();
+            miSession.createQuery("UPDATE Usuario SET apellido='jaja' WHERE apellido LIKE 'pr%'").executeUpdate();
 
-            miSession.createQuery("DELETE Clientes WHERE apellidos LIKE 'jaja%'").executeUpdate();
+            miSession.createQuery("DELETE Usuario WHERE apellido LIKE 'jaja%'").executeUpdate();
 
             // commit
             miSession.getTransaction().commit();

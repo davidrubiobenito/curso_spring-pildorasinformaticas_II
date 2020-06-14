@@ -8,14 +8,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class ConsultaBBDDCliente{
+public class ConsultaBBDDUsuario{
 
-    private static Log log = LogFactory.getLog(ConsultaBBDDCliente.class);
+    private static Log log = LogFactory.getLog(ConsultaBBDDUsuario.class);
 
     public static void main(String[] args){
 
         SessionFactory miFactory = new Configuration().configure("/resources/hibernate.cfg.xml")
-                .addAnnotatedClass(Clientes.class).buildSessionFactory();
+                .addAnnotatedClass(Usuario.class).buildSessionFactory();
 
         Session miSession = miFactory.openSession();
 
@@ -25,27 +25,27 @@ public class ConsultaBBDDCliente{
             miSession.beginTransaction();
 
             // consultaClientes
-            List<Clientes> losClientes = miSession.createQuery("from Clientes").getResultList();
+            List<Usuario> losClientes = miSession.createQuery("from Usuario").getResultList();
             // mostrar los clientes
-            for(Clientes cliente : losClientes){
+            for(Usuario cliente : losClientes){
                 log.info(cliente);
             }
 
             // consula filtrada
-            List<Clientes> consultaFiltrada = miSession.createQuery("from Clientes c where c.apellidos='Code'")
+            List<Usuario> consultaFiltrada = miSession.createQuery("from Usuario c where c.apellido='Code'")
                     .getResultList();
             log.info("------------------------------------------------");
             // mostrar los clientes
-            for(Clientes cliente : consultaFiltrada){
+            for(Usuario cliente : consultaFiltrada){
                 log.info(cliente);
             }
 
-            List<Clientes> consultaFiltrada2 = miSession
-                    .createQuery("from Clientes c where c.apellidos='Delgado' and c.direccion='Gran vía'")
+            List<Usuario> consultaFiltrada2 = miSession
+                    .createQuery("from Usuario c where c.apellido='Delgado' and c.direccion='Gran vía'")
                     .getResultList();
             log.info("------------------------------------------------");
             // mostrar los clientes
-            for(Clientes cliente : consultaFiltrada2){
+            for(Usuario cliente : consultaFiltrada2){
                 log.info(cliente);
             }
 

@@ -14,7 +14,8 @@ public class ConectaBBDD{
 
     public static void main(String[] args){
 
-        final String JDBC_URL = "jdbc:mysql://192.168.1.35/sb-multimodule-management";
+        //final String JDBC_URL = "jdbc:mysql://192.168.1.35/sb-multimodule-management";
+        final String JDBC_URL = "jdbc:mysql://localhost:33060/pildorashibernate?useSSL=false";
         final String USER = "root";
         final String PASS = "1234";
 
@@ -60,7 +61,7 @@ public class ConectaBBDD{
 
     public static ResultSet executeQuery(final Statement miStatement){
         try{
-            return miStatement.executeQuery("SELECT * FROM users");
+            return miStatement.executeQuery("SELECT * FROM usuario");
         }catch(Exception e){
             log.error("An error occurred result set.", e);
         }
@@ -70,7 +71,7 @@ public class ConectaBBDD{
     public static void showResultQuery(final ResultSet miResultSet){
         try{
             while(miResultSet.next()){
-                log.info(miResultSet.getString("id") + " " + miResultSet.getString("email_address"));
+                log.info(miResultSet.getString("id") + " " + miResultSet.getString("nombre"));
             }
         }catch(Exception e){
             log.error("An error occurred show result query.", e);
