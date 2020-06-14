@@ -23,11 +23,10 @@ public class ObtenerClienteBBDD{
 
             if(detalleCliente != null && detalleCliente.getCliente() != null){
                 log.info("Cliente: " + detalleCliente.getCliente());
+                miSession.delete(detalleCliente);
+                miSession.getTransaction().commit();
             }
-
-            miSession.getTransaction().commit();
             log.info("Terminado");
-
         }catch(Exception e){
             log.error("No conecta", e);
         }finally{
