@@ -1,6 +1,5 @@
 package com.drbotro.spring.mvc.bbdd.hibernate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +26,7 @@ public class DetalleCliente{
     @Column(name = "COMENTARIOS")
     private String comentarios;
 
-    @OneToOne(mappedBy = "detalleCliente", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "detalleCliente")
     private Cliente cliente;
 
     public DetalleCliente(){
